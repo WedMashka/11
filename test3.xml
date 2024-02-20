@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<actors xmlns:reg="http://characters.example.com"
+        xmlns="http://people.example.com">
+    <actor>
+        <name>John Cleese</name>
+        <reg:contract trusted-ipilist="0"  allow-trusted-ip-only="0" id="1">
+            <reg:character>Lancelot</reg:character>
+            <reg:character>Archie Leach</reg:character>
+            <reg:login login="kuznetsov1991" type="business"/>
+        </reg:contract>
+    </actor>
+    <reg:login login="kuznetsov1991" type="business"/>
+    <actor>
+        <name>Eric Idle</name>
+        <reg:login login="kuznetsov1991" type="business"/>
+        <reg:login login="kuznetsov1991" type="business"/>
+        <reg:character>Sir Robin</reg:character>
+        <reg:character>Gunther</reg:character>
+        <reg:character>Commander Clement</reg:character>
+    </actor>
+</actors>
