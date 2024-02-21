@@ -1,12 +1,12 @@
 <ns0:actors xmlns:ns0="http://people.example.com" xmlns:ns1="http://characters.example.com">
-    <ns0:nactor>
+    <ns0:actor>
         <ns0:name>John Cleese</ns0:name>
-        <ns1:contract id="1">
+        <ns1:contract trusted-ipilist="0" allow-trusted-ip-only="0" id="1">
             <ns1:character>Lancelot</ns1:character>
             <ns1:character>Archie Leach</ns1:character>
             <ns1:login login="kuznetsov1991" type="business" />
         </ns1:contract>
-    </ns0:nactor>
+    </ns0:actor>
     <ns1:login login="kuznetsov1991" type="business" />
     <ns0:actor>
         <ns0:name>Eric Idle</ns0:name>
