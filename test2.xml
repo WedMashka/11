@@ -1,19 +1,21 @@
-<ns0:actors xmlns:ns0="http://people.example.com" xmlns:ns1="http://characters.example.com">
-    <ns0:actor>
-        <ns0:name>John Cleese</ns0:name>
-        <ns1:contract trusted-ipilist="0" allow-trusted-ip-only="0" id="1">
-            <ns1:character>Lancelot</ns1:character>
-            <ns1:character>Archie Leach</ns1:character>
-            <ns1:login login="kuznetsov1991" type="business" />
-        </ns1:contract>
-    </ns0:actor>
-    <ns1:login login="kuznetsov1991" type="business" />
-    <ns0:actor>
-        <ns0:name>Eric Idle</ns0:name>
-        <ns1:login login="kuznetsov1991" type="business" />
-        <ns1:login login="kuznetsov1991" type="business" />
-        <ns1:character>Sir Robin</ns1:character>
-        <ns1:character>Gunther</ns1:character>
-        <ns1:character>Commander Clement</ns1:character>
-    </ns0:actor>
-</ns0:actors>
+<?xml version="1.0" encoding="utf-8"?>
+<actors xmlns:reg="http://characters.example.com"
+        xmlns="http://people.example.com">
+    <actor>
+        <name>John Cleese</name>
+        <reg:contract trusted-ipilist="0"  allow-trusted-ip-only="0" id="1">
+            <reg:character>Lancelot</reg:character>
+            <reg:character>Archie Leach</reg:character>
+            <reg:login login="kuznetsov1991" type="business"/>
+        </reg:contract>
+    </actor>
+    <reg:login login="kuznetsov1991" type="business"/>
+    <actor>
+        <name>Eric Idle</name>
+        <reg:login login="kuznetsov1991" type="business"/>
+        <reg:login login="kuznetsov1991" type="business"/>
+        <reg:character>Sir Robin</reg:character>
+        <reg:character>Gunther</reg:character>
+        <reg:character>Commander Clement</reg:character>
+    </actor>
+</actors>
