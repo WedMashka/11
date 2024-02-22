@@ -45,3 +45,4 @@ print("*******                ************                         ******")
 print(new_res)
 
 
+f = '<?xml version="1.0" encoding="windows-1251"?>'
