@@ -1,10 +1,10 @@
 
 
 list_name_for_survey =[]# лист тех кто должен пройти опрос
-question1 = False# вопрос на который нужно ответить
+question1 = [] # вопрос на который нужно ответить
 list_name_who_try = []# лист тех кто попытался ответить
 dictionary_name_answer = {}# словарь имен кто прошел опрос с листом его ответов
-choice = 1 # переменная положения меню
+choice12 = [1] # переменная положения меню
 def check_int(n): # проверяет есть ли в строке цифра, вернет тру если есть
     for kk in n:
         if kk.isnumeric():
@@ -14,25 +14,25 @@ def check_int(n): # проверяет есть ли в строке цифра,
 
 
 def check_name_smal_for_apped(list_n): # проверяет список имен-исключений короче 2 символа и выводит предупреждение на экран не добалены
-    if len(list_n)>0:
+    if len(list_n) > 0:
         str_survay = 'Не добавлен(ы): '
         str_survay2 = ' т.к. имя меньше двух символов'
         print(str_survay,str(list_n).replace('[',' ').replace(']',' '), str_survay2)
 
 def check_name_isdigit_for_apped(list_n): # проверяет список имен-исключений содержащих цифру и выводит предупреждение на экран не добалены
-    if len(list_n)>0:
+    if len(list_n) > 0:
         str_survay = 'Не добавлен(ы): '
         str_survay2 = 'т.к. имя содержит цифру'
         print(str_survay,str(list_n).replace('[',' ').replace(']',' '), str_survay2)
 
 def check_name_try_for_apped(list_n): # проверяет список имен-исключений уже прошедших опрос и выводит предупреждение на экран не добалены
-    if len(list_n)>0:
+    if len(list_n) > 0:
         str_survay = 'Не добавлен(ы): '
         str_survay2 = ' т.к. уже прошли опрос'
         print(str_survay,str(list_n).replace('[',' ').replace(']',' '), str_survay2)
 
 def check_name_survey_for_apped(list_n): # проверяет список имен-исключений уже добавленных для опроса и выводит предупреждение на экран не добалены
-    if len(list_n)>0:
+    if len(list_n) > 0:
         str_survay = 'Не добавлен(ы): '
         str_survay2 = ' т.к. уже были в списке для опроса'
         print(str_survay,str(list_n).replace('[',' ').replace(']',' '), str_survay2)
@@ -46,7 +46,7 @@ def show_wrong_names_to_add(l_survey, l_try, l_number, l_small): # собира�
 
 
 def check_name_try_for_dell(list_n): # проверяет список имен-исключений уже прошедших опрос и выводит предупреждение на экран не добалены
-    if len(list_n)>0:
+    if len(list_n) > 0:
         str_survay = 'Не удален(ы): '
         str_survay2 = ' т.к. уже прошли опрос'
         print(str_survay,str(list_n).replace('[',' ').replace(']',' '), str_survay2)
@@ -90,7 +90,10 @@ def append_new_name():# добавляет новые имена для опро
             list_name_for_survey.append(n.strip())
     show_wrong_names_to_add(list_name_already_on_list_for_survey, list_name_already_on_list_try, list_name_with_number, list_small_name)
     if len(list_name_for_survey) > 0:
-        return True
+        if question1:
+            start_program_menu()
+        else:
+            enter_question()
     else:
         append_new_name()
 
@@ -107,93 +110,133 @@ def delete_name():
         else:
             list_name_not_found_any_where.append(n)
     show_wrong_names_to_dell(list_name_not_found_any_where, list_name_already_on_list_try)
+    start_program_menu()
 
 def check_answer(name_s): # проверяет ответ и добавляет его с именем в словарь
-    print(question1)
+    print(question1[len(question1)-1])
     answer1 = input('Enter your answer: ')
     answer2 = answer1.split(',')
-    answer3 = [] # список который в итоге добавим в словарь
+    answer3 = [] # список который в итоге добавим в словарь с ключем имя
     if len(answer2) < 1:
         print('Вы не ввели ответ на вопрос ')
-        # предложить выбор попробовать еще раз ответить на вопрос или выйти в главное меню
-        # check_answer(name_s)
-    for ans in answer2:
-        ans = ans.strip()
-        answer3.append(ans)
-    dictionary_name_answer[name_s] = answer3
+        check_answer(name_s) # рекурсия
+    else:
+        for ans in answer2:
+            ans = ans.strip()
+            answer3.append(ans)
+        dictionary_name_answer[name_s] = answer3 # добавляем в словарь имя и ответ
+        list_name_who_try.append(name_s)
+        list_name_for_survey.remove(name_s)
 
 
 def survey():
     name_s = input('Enter your name: ')
     name_s = name_s.strip()
-    if survey_name_check(name_s, list_name_who_try):
+    if survey_name_check(name_s, list_name_who_try): # проверяет есть ли имя в списке тех кто уже прошел опрос
         print('You have already completed the survey')
-        # и запук метода который предолжит выбор возможностей
+        start_program_menu() # запускает меню пользователя
     elif survey_name_check(name_s, list_name_for_survey):# проверяю есть ли имя в списке тех кто должен пройти  опрос
-        check_answer(name_s)
+        check_answer(name_s)# проверяет ответ и добавляет его с именем в словарь
+        start_program_menu()
+    else:
+        print('Данного имени нет в списке на участие в опосе')
+        start_program_menu()
 
 def statistic_survey():
-    print(list_name_for_survey)
-    print(list_name_who_try)
-    print(dictionary_name_answer)
+    print('Всего учавствовало в опросе : ', len(list_name_for_survey) + len(list_name_who_try), ' человек')
+    print('Прошло опрос : ', len(list_name_who_try), ' человек')
+    print('Не прошло опрос : ', len(list_name_for_survey), ' человек')
+    statistic_list = []
+    statistic_list_unique_value = []
+    if len(dictionary_name_answer) > 0: # собираем список всех ответов
+        for k, v in dictionary_name_answer.items():
+            statistic_list.append(v)
+    for val in statistic_list:  # собираем список всех уникальных ответов
+        bol = False
+        for val1 in statistic_list_unique_value:
+            if val1 == val:
+                bol = True
+        if not bol:
+            statistic_list_unique_value.append(val)
+    for val3 in statistic_list_unique_value:
+        str11 = str(val3).replace('[',' ').replace(']', ' ')
+        print( str11, ' ответило ', statistic_list.count(val3), ' человек')
 
-def start_menu(choice):
-    print()
+
+
 
 def admin_menu():
     choice_admin = int(input('''Добавить имена введите 5,
         Удалить имена введите 6,
         создать новый опрос  7,
-        Отобразить статистику 8,
         Выйти из программы 9,
         Введите число: '''))
-    if choice_admin == 5:
-        append_new_name()
-    elif choice_admin ==6:
-        delete_name()
-    elif choice_admin == 7:
-        print("d")
-    elif choice_admin == 8:
-        print("d")
-    elif choice_admin == 9:
-        print("d")
+    if choice_admin == 5 or choice_admin == 6 or choice_admin == 7 or choice_admin == 3 or choice_admin == 9:
+        choice12.append(choice_admin)
     else:
         print("Не коректный ввод")
         admin_menu()
 
 
-def start_program_menu(cho1):
-        cho = int(input('''
+def start_program_menu():
+        cho33 = input('''
             Начать опрос введите 2,
             Вывести статистику введите 3,
             Выйти в меню администратора (Там можно добавить и удалить имя) введите 4,    
-            Введите цифру: '''))
-        if cho != 2 or cho != 3 or cho != 4:
+            Введите цифру: ''')
+        if len(cho33) > 2:
             print(' Некорректный ввод попрубуйте еще раз ')
-            start_program_menu(cho1)
+            start_program_menu()
+        elif cho33.isnumeric():
+            cho = int(cho33)
+            if cho == 2 or cho == 3 or cho == 4:
+                choice12.append(cho)
+            else:
+                print(' Некорректный ввод попрубуйте еще раз ')
+                start_program_menu()
         else:
-            cho1 = cho
-def enter_question(question): #устанавливает вопрос рекурсия если вопрос не введен
-    q = False
-    question2 = input('Enter your question').strip()
+            print(' Некорректный ввод попрубуйте еще раз ')
+            start_program_menu()
+def enter_question(): #устанавливает вопрос рекурсия если вопрос не введен
+    question2 = input('Enter your question : ').strip()
     if len(question2) > 0:
-        question = question2
-        q = True
-        return q
+        question1.append(question2)
+        return True
     else:
         print("Некоректный ввод вопроса, повторите ввод вопроса")
-        enter_question(question)
+        enter_question()
 
-def start_program(choi):
+def start_program():
     append_new_name()
-    enter_question(question1)
-    while(choi):
-        if choi == 1:
-            start_program_menu(choice)
-        elif choi == 2:
+    # enter_question()
+    while(choice12[len(choice12)-1]>=1):
+        if choice12[len(choice12)-1] == 1:
+            start_program_menu()
+        elif choice12[len(choice12)-1] == 2:
             survey()
+        elif choice12[len(choice12)-1] == 3:
+            statistic_survey()
+            start_program_menu()
+        elif choice12[len(choice12)-1] == 4:
+            admin_menu()
+        elif choice12[len(choice12)-1] == 5:
+            append_new_name()
+        elif choice12[len(choice12)-1] == 6:
+            delete_name()
+        elif choice12[len(choice12)-1] == 7:
+            list_name_for_survey.clear()
+            list_name_who_try.clear()
+            dictionary_name_answer.clear()
+            choice12.append(1)
+            question1.clear()
+            start_program()
+        elif choice12[len(choice12)-1] == 9:
+            return ''
+        else:
+            start_program_menu()
 
-start_program(choice)
+
+start_program()
 
 
 
