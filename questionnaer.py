@@ -130,17 +130,20 @@ def check_answer(name_s): # проверяет ответ и добавляет 
 
 
 def survey():
-    name_s = input('Enter your name: ')
-    name_s = name_s.strip()
-    if survey_name_check(name_s, list_name_who_try): # проверяет есть ли имя в списке тех кто уже прошел опрос
-        print('You have already completed the survey')
-        start_program_menu() # запускает меню пользователя
-    elif survey_name_check(name_s, list_name_for_survey):# проверяю есть ли имя в списке тех кто должен пройти  опрос
-        check_answer(name_s)# проверяет ответ и добавляет его с именем в словарь
-        start_program_menu()
+    if len(list_name_for_survey)>0:
+        name_s = input('Enter your name: ')
+        name_s = name_s.strip()
+        if survey_name_check(name_s, list_name_who_try): # проверяет есть ли имя в списке тех кто уже прошел опрос
+            print('You have already completed the survey')
+            start_program_menu() # запускает меню пользователя
+        elif survey_name_check(name_s, list_name_for_survey):# проверяю есть ли имя в списке тех кто должен пройти  опрос
+            check_answer(name_s)# проверяет ответ и добавляет его с именем в словарь
+            start_program_menu()
+        else:
+            print('Данного имени нет в списке на участие в опосе')
+            start_program_menu()
     else:
-        print('Данного имени нет в списке на участие в опосе')
-        start_program_menu()
+        show_list_for_survay()
 
 def statistic_survey():
     print('Всего учавствовало в опросе : ', len(list_name_for_survey) + len(list_name_who_try), ' человек')
@@ -166,15 +169,30 @@ def statistic_survey():
 
 
 def admin_menu():
-    choice_admin = int(input('''Добавить имена введите 5,
+    cho =input('''
+        Выйти из меню администартора 1,
+        Начать опрос введите 2,
+        Вывести статистику введите 3
+        Добавить имена введите 5,
         Удалить имена введите 6,
         создать новый опрос  7,
-        Выйти из программы 9,
-        Введите число: '''))
-    if choice_admin == 5 or choice_admin == 6 or choice_admin == 7 or choice_admin == 3 or choice_admin == 9:
-        choice12.append(choice_admin)
+        Показать список кто должен пройти опрос 8,
+        Показать список кто прошел опрос 9,
+        Выйти из программы 0,
+        Введите число: ''')
+    choice_admin = 0
+    if len(cho) > 2:
+        print(' Некорректный ввод попрубуйте еще раз ')
+        admin_menu()
+    elif cho.isnumeric():
+        choice_admin = int(cho)
+        if choice_admin == 0 or choice_admin == 1 or choice_admin == 2 or choice_admin == 5 or choice_admin == 6 or choice_admin == 7 or choice_admin == 8 or choice_admin == 3 or choice_admin == 9:
+            choice12.append(choice_admin)
+        else:
+            print("Некорректный ввод попрубуйте еще раз")
+            admin_menu()
     else:
-        print("Не коректный ввод")
+        print("Некорректный ввод попрубуйте еще раз")
         admin_menu()
 
 
@@ -205,6 +223,22 @@ def enter_question(): #устанавливает вопрос рекурсия 
     else:
         print("Некоректный ввод вопроса, повторите ввод вопроса")
         enter_question()
+def show_list_try():
+    if len(list_name_who_try) > 0:
+        st = ', '.join(list_name_who_try).replace('[', ' ').replace(']', ' ')
+        print('Опрос уже прошли: ', st)
+        start_program_menu()
+    else:
+        print('Еще никто не прошел опрос')
+        start_program_menu()
+def show_list_for_survay():
+    if len(list_name_for_survey) > 0:
+        st = ', '.join(list_name_for_survey).replace('[', ' ').replace(']', ' ')
+        print('Опрос нужно пройти: ', st)
+        start_program_menu()
+    else:
+        print('Все уже прошли опрос')
+        start_program_menu()
 
 def start_program():
     append_new_name()
@@ -230,10 +264,13 @@ def start_program():
             choice12.append(1)
             question1.clear()
             start_program()
-        elif choice12[len(choice12)-1] == 9:
-            return ''
+        elif choice12[len(choice12)-1] == 8:
+            show_list_for_survay()
+        elif choice12[len(choice12) - 1] == 9:
+            show_list_try()
         else:
             start_program_menu()
+    print(' Вы вышли из программы')
 
 
 start_program()
