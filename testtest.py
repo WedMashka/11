@@ -46,9 +46,13 @@
 # print(choice12[len(choice12)-1])
 # start_program_menu()
 # print(choice12[len(choice12)-1])
-n =1
-while n != 5:
-    print('hhh')
-    n = int(input('enter number: '))
-    print(n)
+# n =1
+# while n != 5:
+#     print('hhh')
+#     n = int(input('enter number: '))
+#     print(n)
+#
+
+# tt = open('test222.txt', 'w', encoding="utf-8")
+# tt.write("nnnsevhoehrejojero")
 
