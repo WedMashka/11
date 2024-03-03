@@ -42,13 +42,14 @@ def edit_file_xml(file_name_for_edit, str_path1): # принимает имя ф
 
 
 def select_file_for_edit(path_to_file):
-    if not os.path.exists(os.path.join(path_to_file)):  # создаст папку ресулт в текущем каталоге, если ее нет
-        os.mkdir(os.path.join(path_to_file))
+    if not os.path.exists(os.path.join(path_to_file, 'result1')):  # создаст папку ресулт в текущем каталоге, если ее нет
+        os.mkdir(os.path.join(path_to_file, 'result1'))
     all_file = os.walk(path_to_file)  # получаем древо директорий в каталоге
     for list_file1 in all_file: # добавляем в лсит директорий существующие директории
         if len(list_file1[2]) > 0: # если в директории есть файлы
-            for name_file in list_file1:
+            for name_file in list_file1[2]:
                 str_name_file = name_file
+                print(name_file)
                 if str_name_file.__contains__("dbo-info"):
                     edit_file_xml(str_name_file, path_to_file)
 

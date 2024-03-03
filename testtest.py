@@ -56,3 +56,9 @@
 # tt = open('test222.txt', 'w', encoding="utf-8")
 # tt.write("nnnsevhoehrejojero")
 
+# with open("file1.txt", "r") as f:
+#     data = f.read()
+#
+# with open("file1.txt", "w") as f:
+#     f.write(data)
+

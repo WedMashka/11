@@ -1,8 +1,6 @@
-import os
+import os.path
 
-str_path = os.getcwd()  # адрес текущей директории
-
-
+str_path = os.getcwd()
 def edit_file_xml(file_name_for_edit, str_path1): # принимает имя файла и его текщий каталог, создает в егокаталоге папку ресулт1 и вставляет туда отредактированный фаил
     file = open(os.path.join(str_path1, file_name_for_edit), 'r', encoding="windows-1251")
     data = file.read()
@@ -36,25 +34,12 @@ def edit_file_xml(file_name_for_edit, str_path1): # принимает имя ф
         data = data.replace('  ', ' ')  # удаление двойного пробела
     while data.__contains__('> <'):
         data = data.replace('> <', '><')  # удаление пробела между тегами
-    r = open(os.path.join(str_path1, 'result1', file_name_for_edit), 'w', encoding="windows-1251")  # содаем фаил куда пропишим результат
+    r = open(os.path.join(str_path1, 'res', file_name_for_edit), 'w', encoding="windows-1251")  # содаем фаил куда пропишим результат
     r.write(data) #  прописываем результат в фаил
     r.close() # закрыли открытие
 
 
-def select_file_for_edit(path_to_file):
-    if not os.path.exists(os.path.join(path_to_file)):  # создаст папку ресулт в текущем каталоге, если ее нет
-        os.mkdir(os.path.join(path_to_file))
-    all_file = os.walk(path_to_file)  # получаем древо директорий в каталоге
-    for list_file1 in all_file: # добавляем в лсит директорий существующие директории
-        if len(list_file1[2]) > 0: # если в директории есть файлы
-            for name_file in list_file1:
-                str_name_file = name_file
-                if str_name_file.__contains__("dbo-info"):
-                    edit_file_xml(str_name_file, path_to_file)
+if not os.path.exists(os.path.join(str_path, 'res')):  # создаст папку ресулт в текущем каталоге, если ее нет
+    os.mkdir(os.path.join(str_path, 'res'))
 
-select_file_for_edit(str_path)
-
-
-
-
-
+edit_file_xml('test3.xml', str_path)

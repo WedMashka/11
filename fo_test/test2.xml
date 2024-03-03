@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<actors xmlns:reg="http://characters.example.com"
+        xmlns="http://people.example.com">
+    <actor>
+        <name>John Cleese</name>
+        <reg:contract trusted-ipilist="0"  allow-trusted-ip-only="0" id="1">
+            <reg:character>Lancelot</reg:character>
+            <reg:character>Archie Leach</reg:character>
+        </reg:contract>
+    </actor>
+    <actor>
+        <name>Eric Idle</name>
+
+        <reg:character>Sir Robin</reg:character>
+        <reg:character>Gunther</reg:character>
+        <reg:character>Commander Clement</reg:character>
+    </actor>
+</actors>
