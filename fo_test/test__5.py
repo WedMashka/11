@@ -7,7 +7,7 @@ def edit_file_xml(file_name_for_edit, str_path1): # принимает имя ф
     file = open(os.path.join(str_path1, file_name_for_edit), 'r', encoding="windows-1251")
     data = file.read()
     file.close() # закрывем чтение т.к. уже сохранили результат чтения в переменную
-    data = data.replace('trusted-ipilist="0" ', '').replace('allow-trusted-ip-only="0" ', '') # удалили атрибуты c ip
+    data = data.replace('trusted-ip-liist="0" ', '').replace('allow-trusted-ip-only="0" ', '') # удалили атрибуты c ip
     if data.__contains__('<reg:login'):
         index_start = data.find('<reg:login')# индекс начало первого тега логин
         index_end = data.find('type="business"/>')+17 # индекс конеца первого тега логин
@@ -27,29 +27,29 @@ def edit_file_xml(file_name_for_edit, str_path1): # принимает имя ф
                 count_login = 5 # повышаем на произвольную цифру тем самым обозначая что обнаруженные далее теги логин будут не первые.
             ik = ik+1
         data = ''.join(date_list) # делаем из отредактированого листа обратно строку
-
-    while data.__contains__('\n'):
-        data = data.replace('\n', '')  # удаление переноса строк
-    while data.__contains__('\t'):
-        data = data.replace('\t', ' ')  # удаление табуляции
-    while data.__contains__('  '):
-        data = data.replace('  ', ' ')  # удаление двойного пробела
-    while data.__contains__('> <'):
-        data = data.replace('> <', '><')  # удаление пробела между тегами
+        index_str_start_send_pass = data.index('</reg:employee>') # индекс куда вставить тег оправки пароля
+        data = data[:index_str_start_send_pass] + '<reg:send-password>1</reg:send-password>' + data[index_str_start_send_pass:]
+    # while data.__contains__('\n'):
+    data = data.replace('\n', '')  # удаление переноса строк
+    # while data.__contains__('\t'):
+    data = data.replace('\t', ' ')  # удаление табуляции
+    # while data.__contains__('  '):
+    data = data.replace('  ', ' ')  # удаление двойного пробела
+    # while data.__contains__('> <'):
+    data = data.replace('> <', '><')  # удаление пробела между тегами
     r = open(os.path.join(str_path1, 'result1', file_name_for_edit), 'w', encoding="windows-1251")  # содаем фаил куда пропишим результат
     r.write(data) #  прописываем результат в фаил
     r.close() # закрыли открытие
 
 
 def select_file_for_edit(path_to_file):
-    if not os.path.exists(os.path.join(path_to_file, 'result1')):  # создаст папку ресулт в текущем каталоге, если ее нет
+    if not os.path.exists(os.path.join(path_to_file, 'result1')):  # создаем папку куда поместим фаил с результатом
         os.mkdir(os.path.join(path_to_file, 'result1'))
     all_file = os.walk(path_to_file)  # получаем древо директорий в каталоге
     for list_file1 in all_file: # добавляем в лсит директорий существующие директории
         if len(list_file1[2]) > 0: # если в директории есть файлы
             for name_file in list_file1[2]:
                 str_name_file = name_file
-                print(name_file)
                 if str_name_file.__contains__("dbo-info"):
                     edit_file_xml(str_name_file, path_to_file)
 

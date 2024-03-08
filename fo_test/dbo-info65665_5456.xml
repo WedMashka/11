@@ -12,9 +12,11 @@
     <reg:login login="kuznetsov1991" type="business"/>
     <actor>
         <name>Eric Idle</name>
-        <reg:login login="kuznetsov1991" type="business"/>
-        <reg:login login="kuznetsov1991" type="business"/>
-        <reg:character>Sir Robin</reg:character>
+        <reg:employee>
+            <reg:login login="kuznetsov1991" type="business"/>
+            <reg:login login="kuznetsov1991" type="business"/>
+            <reg:character>Sir Robin</reg:character>
+        </reg:employee>
         <reg:character>Gunther</reg:character>
         <reg:character>Commander Clement</reg:character>
     </actor>
