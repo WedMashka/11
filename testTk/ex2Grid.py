@@ -25,7 +25,8 @@ btn6.grid(row=0, column=3,
           rowspan=4, # объединяет несколько колонок
           stick='ns', # растягивает объединеные колонки указываются запад восток север юг
           )
-window.grid_columnconfigure(0, minsize=100)
+window.grid_columnconfigure(0, minsize=100) # задает мин размер первой колонки
+window.grid_rowconfigure(2,minsize=100) # задает мин размер третей строки
 window.geometry('500x500+200+200')
 window.minsize(500, 400)
 
