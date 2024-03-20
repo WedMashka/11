@@ -5,6 +5,7 @@ window = tk.Tk()
 window.geometry('500x400+400+100')
 window.title('Test Entry')
 entry = tk.Entry(window,
+                 show='*', # используется для паролей что бы не оображать результат ввода
                  relief=tk.RAISED,
                  bd=4) #создали  поле для ввода
 entry.grid(row=0, column=1) # установили его в окне
