@@ -1,4 +1,4 @@
-
+print('-----------------------------------------------6----------------------------------------------------------------------')
 class Garage():
     def __init__(self,garage_name, product_type):
         self.garage_name = garage_name
