@@ -1,6 +1,7 @@
 import tkinter as tk
 from random import randint
 
+
 window = tk.Tk()
 window.geometry('500x400+400+100')
 window.title('Test Entry')
