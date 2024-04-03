@@ -62,3 +62,12 @@
 # with open("file1.txt", "w") as f:
 #     f.write(data)
 
+# def favorit_eat(*list):
+#     food = "Рагу из: "
+#     for ar in list:
+#         food = food + ar + " "
+#     print(list[0])
+#
+# favorit_eat("картофель", "лук", "помидоры")
+
+

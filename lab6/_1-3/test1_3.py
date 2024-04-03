@@ -5,8 +5,8 @@ def favorit_eat(*list):
         food = food + ar + " "
     print(food)
 
-favorit_eat("картофель, лук, помидоры")
-favorit_eat("яйцо, лук")
+favorit_eat("картофель", "лук", "помидоры")
+favorit_eat("яйцо", "лук")
 favorit_eat("куропатки")
 
 
