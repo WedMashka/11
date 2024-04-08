@@ -15,18 +15,15 @@ def readAndSaveLinesFile(fileIn, listLine):
 
 
 
-listLines = []
+listLines = [] # списко для строк
+
 with open('source/litreture.txt','r', encoding='utf-8') as File_In:
     # print('-------------------first variant out----------------------------')
     # print(readContentFile(File_In))
     # print('------------------------second variant out-------------------------')
     # readLinesFile(File_In)
-    readAndSaveLinesFile(File_In,listLines)
+    readAndSaveLinesFile(File_In, listLines)
 
 print('--------------------------third variant-------------------------------')
 for val in listLines:
     print(val)
-
-
-
-
