@@ -1,0 +1,541 @@
+International Journal of Operations Research Vol. 14, No. 4, 157−167 (2017)
+A Method for Key Performance Indicator Assessment in Manufacturing
+Organizations
+Patrick Hester1*, Barry Ezell2
+, Andrew Collins2
+, John Horst3
+, and Kaleen Lawsure2
+1Department of Management and Accountancy
+University of North Carolina at Asheville
+Asheville, NC 28804
+2Virginia Modeling, Analysis and Simulation Center
+Old Dominion University
+Suffolk, VA 23435
+3Engineering Laboratory
+National Institute for Standards and Technology (NIST)
+Gaithersburg, MA 20899
+Received August 2015; Revised June 2016; Accepted September 2016
+Abstract: Key Performance Indicators (KPIs) are an essential element of an organization’s ability to monitor its
+strategic health, helping to ensure the strategic goals of the organization are achieved. However, KPI assessment and
+improvement is often an ad hoc and consultant-driven process rather than one undertaken using scientific principles.
+This paper outlines the development and subsequent deployment of a method for KPI assessment founded in
+scholarly literature and balancing practitioner concerns for ease of use. The proposed method draws heavily on
+organizational stakeholder involvement at varying levels throughout the KPI assessment process, improving current
+methods by introducing a mathematical foundation based on value-focused thinking. The proposed method allows
+stakeholders to evaluate the organization’s KPIs in an effort to determine organizational performance against
+predetermined KPI thresholds. The method is demonstrated on a case study and suggestions for future research are
+offered.
+Keyword — Key performance indicators, assessment, performance management, performance measurement,
+decision analysis
+1. INTRODUCTION
+Performance measurements, and particularly key performance indicators (KPIs), provide managers and decisionmakers with a snapshot of their business operations, specifically how well a business is achieving its goals. There is no
+shortage of literature pertaining to organizational performance measurement and performance measurement systems.
+Public and private sector organizations have for several decades acknowledged the importance of measuring their own
+performance (Behn, 2003; Bourne, Mills, Wilcox, Neely, & Platts, 2000; Gimbert, Bisbe, & Mendoza, 2010; National
+Performance Review, 1997; Neely, 1999; Wilcox & Bourne, 2003). Researchers have developed many systems and
+accompanying approaches to meet these measurement needs (Behn, 1995; Bourne, et al., 2000; Bourne, Neely, Platts,
+& Mills, 2002; Griffin & Page, 1996; Neely, Mills, Platts, Gregory, & Richards, 1996; Rouse & Puterill, 2003). Despite
+the substantial guidance available in the literature, it is estimated that as many as 70% of such systems fail after they
+are implemented (Baggett & Hester, 2013; Neely & Bourne, 2000). Why? Deriving KPIs is not a simple accounting
+task, and it must include a deep understanding of the business or operation to be successful (Meyers & Hester, 2011),
+including an understanding of the organizational mission and system context. However, traditional methods for KPI
+assessment and improvement are ad hoc and consultant-driven (e.g., Baroudi, 2010; Marr, 2012; Parmenter, 2010; The
+KPI Institute, 2013). While these approaches may be appealing from a practitioner perspective (i.e., you can hire a
+consultant and they provide a list of KPIs), they lack the formal mathematical foundation necessary for a repeatable,
+generalizable approach to KPI assessment.
+The method developed in this paper for KPI assessment draws heavily on organizational stakeholder involvement
+at varying levels throughout the KPI assessment process, improving current methods by introducing a mathematical
+foundation based on value-focused thinking. The paper begins with a background on KPI assessment and
+*Corresponding author’s e-mail: phester@unca.edu
+International Journal of
+Operations Research
+158
+Hester, Ezell, Collins, Horst, and Lawsure: A Method for Key Performance Indicator Assessment in Manufacturing Organizations
+IJOR Vol. 14, No. 4, 157−167 (2017)
+1813-713X Copyright © 2017 ORSTW
+manufacturing. It follows with a stakeholder-centric, proposed method for assessing KPIs for a given organization.
+This method is then demonstrated on a case study. Finally, some conclusions are drawn regarding future use of the
+method as well as potential method improvements.
+2. BACKGROUND
+Fraser (2006) considers that KPIs are vital to business success, especially within the manufacturing domain. Thus, it is
+critical that good and appropriate KPIs are selected for this purpose. The manufacturing industry has seen a resurgence
+in the United States in recent years, as organizations such as the National Institute of Standards and Technology (NIST)
+have emphasized the development of smart manufacturing systems and the standardization of procedures used to
+manage these systems (e.g., Horst and Weiss, 2015). Key performance indicator assessment and improvement is an
+integral part of the success of these systems, however, due to the emergent nature of smart manufacturing, it is not
+always obvious what key performance indicators should be used and whether they can effectively measure the
+performance of these complex systems. Thus, there is a requirement for a measure of the measures, that is, there is a
+requirement to develop a KPI Assessment Methodology (KAM) that can deal with emergent manufacturing processes.
+A successful KAM enables an organization to assess the use of KPIs in a way that helps realize basic corporate goals.
+The main goal of this paper is to develop and demonstrate such a method.
+NIST is currently identifying KPI assessment best practices in manufacturing, to determine if any should be
+standardized (Horst and Weiss, 2015; Lawsure, et al., 2015). Any standardization that would occur would happen
+through a Standards Development Organization (SDO), which conforms to the Voluntary Consensus Standards
+Organization (VCSO) approach, as approved by the American National Standards Institute (ANSI, 2014). Thus, the
+process of whether or not standardization is necessary is not in question; rather, what is in question is what the best
+practices are for such a KAM. The research presented in this paper provides a mechanism, through stakeholder
+workshops, for both assessing KPIs for a manufacturing process, as well as the suggestion for the improvement of
+these KPIs in the selected process based on best practices. The intent of this research is to evolve it into a NIST
+standard for dissemination to the broader manufacturing community.
+Horst and Weiss (2015) determined a set of twenty criteria with which a KPI can be measured, namely: aligned
+(when using different levels of KPI), balanced, standardized, valid, quantifiable, accurate, timely, predictive, actionable,
+trackable, relevant, correct, complete, unambiguous, automated, buy-in, documented, comparable, understandable, and
+inexpensive. From these criteria they were able to apply a simple weighted average multi-criteria decision analysis
+approach to determine KPI effectiveness. The simplicity of this approach was to counter the complexity of other
+proposed approaches, e.g., Carlucci (2010), which is founded on the complex mathematics of the Analytic Network
+Process (ANP) and would not be acceptable to industry use. Given its popularity and straightforward nature, we
+suggest the use of an additive utility model versus more cognitively demanding approaches such as the Analytic
+Hierarchy Process (Saaty, 1980) or its successor, ANP. The practical focus of the proposed approach is in-line with the
+Engineering Laboratories’ desire to promote ideas that enable industrial competitiveness and not just academic merit.
+However, there are problems with using such a simple approach, e.g., linearity and normalization considerations. Thus,
+any proposed approach must balance both academic and practitioner concerns. In other words, it must be scientifically
+defensible to be generalizable and repeatable, but practitioner-oriented so that it is actually used by organizations rather
+than ignored.
+The approach outlined in the paper uses Horst and Weiss (2015) as a starting point, taking their twenty criteria
+list as a baseline. However, to avoid issues of linearity and normalization, we use a rank sum method in the criteria
+weighting calculation and a value function approach to elicit information from the stakeholders without requiring them
+to perform complicated calculations. From this, we have developed a complete method for KPI scoring, selection, and
+assessment. The research outlined in this paper remains grounded to practical implementation due to the incorporation
+of Subject Matter Experts and Stakeholders throughout the development process. The following section outlines the
+proposed method.
+3. METHOD
+The proposed KPI assessment methodology (KAM) uses Value Focused Thinking (VFT) (Kenney, 1992) to provide
+a sound mathematical foundation for KPI assessment. Value functions are often built through subject-matter expertise
+assignment and have the following form:
+1
+() ( )
+n
+mm m
+m
+Vx wv x =
+= å (1)
+159
+Hester, Ezell, Collins, Horst, and Lawsure: A Method for Key Performance Indicator Assessment in Manufacturing Organizations
+IJOR Vol. 14, No. 4, 157−167 (2017)
+1813-713X Copyright © 2017 ORSTW
+where m is the index measure, xm is the level of the mth index measure, vm(xm) is the value of the value function at
+level xm, and wm is the product of the weights for each level up the hierarchy.
+A depiction of the KPI life cycle is shown in Figure 1. This process usually begins with target process
+identification, then proceeds to KPI definition and continues in a cyclical manner from there.
+Figure 1: KPI Life Cycle
+The proposed method focuses specifically on Figure 1’s KPI assessment step. This KAM is shown in Figure 2. The
+methodology is broken down into two major phases: 1) KPI Characterization and 2) KPI Alignment and Balance. This
+paper focuses on Phase 1, and the remainder of this section provides an overview of its 11 steps, as shown in Figure
+2. Several elements of Figure 2 require elaboration. Activities include a preparatory activity intended to be executed
+outside the scope of the facilitator-led stakeholder event (as indicated by a green oval), an individual stakeholder activity
+(as indicated by a red diamond), a model calculation (as indicated by a white polygon), or a group activity (as indicated
+by a yellow rectangle). Further, calculations may take place by a web-based FileMaker Pro interface (as indicated by a
+“W”) or via an Excel spreadsheet (as indicated by an “E”). It should be noted that steps 1-4 are expected to be
+completed prior to steps 5-11, which are typically executed during a 1-2 day, facilitator-led workshop. The facilitator is
+intended to be an individual that is external to the organization so as to avoid any internal bias.
+Figure 2: KPI Assessment Methodology
+Step 1: Identify target manufacturing process
+Problem definition is neither trivial nor straightforward. Vennix (1996) agrees, stating of messy problems:
+One of the most pervasive characteristics of messy problems is that people hold entirely different views on (a) whether there is a
+problem, and if they agree there is, and (b) what the problem is. In that sense messy problems are quite intangible and as a result
+various authors have suggested that there are no objective problems, only situations defined as problems by people. (p. 13)
+Hammond, Keeney, and Raiffa (2002) discuss the importance of problem formulation: "The way you state your
+160
+Hester, Ezell, Collins, Horst, and Lawsure: A Method for Key Performance Indicator Assessment in Manufacturing Organizations
+IJOR Vol. 14, No. 4, 157−167 (2017)
+1813-713X Copyright © 2017 ORSTW
+problem frames your decision. It determines the alternatives you consider and the way you evaluate them. Posing the
+right problem drives everything else" (p. 15).
+The focus of this research is on existing manufacturing organizations and processes, where, it may be argued,
+there is general consensus on the problem (or more specifically, process) being considered. So, it is up to the
+manufacturing organization, with the help of a facilitator if necessary, to determine a priori, the target manufacturing
+process (TMP) in question to be examined. Armed with a TMP, we can move to step 2.
+Step 2: Identify stakeholders
+Stakeholder identification is part of a larger process known as stakeholder analysis. Hester and Adams (2013) offer a
+succinct introduction to stakeholder analysis:
+Stakeholder analysis was first explored by Freeman (1984) as a methodology to assist business organization leadership with their
+strategic management functions. Stakeholder analysis has since expanded beyond the corporate arena. Stakeholders exist at the center
+of any complex problem solving effort and holistic consideration of them is a key element of analyzing a problem systemically.
+Stakeholders are the customers, users, clients, suppliers, employees, regulators, and team members of a system. They fund a system,
+design it, build it, operate it, maintain it, and dispose of it. Each stakeholder contributes their own value-added perspective, as
+described by the systems principle known as complementarity. (p. 337)
+Hester and Adams (2014) introduce the notion of stakeholder identification: “The first step necessary for
+stakeholder analysis is arguably the most straightforward, that is, identifying the stakeholders relevant to the problem
+being analyzed” (p. 82). A quandary exists, however. “We must have some notion of our problem before we can
+brainstorm who might be relevant to the problem solving process, however, we need those very stakeholders to help
+us clearly formulate (and later reformulate) our problem” (Hester and Adams, 2014, p. 82). Thus, steps 1 and 2 must
+operate in concert with one another. The key for stakeholder identification is to ensure a broad range of perspectives
+is incorporated into any KPI assessment approach. This prevents a unilateral perspective and encourages
+complementary viewpoints are taken into account. It is assumed that stakeholders are identified prior to undertaking
+a workshop.
+Step 3: Discuss KPIs used in TMP and Step 4: Decide on KPIs for TMP
+Our empirical results have shown that manufacturing organizations typically have a set of KPIs in house that they
+currently measure. However, as previously discussed, the relative merit of a given KPI will certainly differ depending
+on an individual’s perspective (i.e., line worker vs. vice president). Thus, it is important that KPIs currently being used
+are identified, as well as a (potentially) smaller list of retained KPIs to be examined is agreed upon by the stakeholders
+chosen in step 2.
+Step 5: Rank criteria for KPI assessment
+Step 5 is the first workshop step to be undertaken. Using a rank sum method, each of the criteria is ranked numerically
+in descending order, e.g. a one is assigned to the most important criteria, a two to the second-most important, etc., by
+each of the stakeholders. The criteria that are used in the method are their definitions are found in Table 1. Notice
+that this list is a reduction of the original 20 criteria identified by Horst and Weiss (2015).
+Table 1: KPI Criteria and Definitions (Adapted from Horst and Weiss, 2015)
+Criterion Definition
+Quantifiable The degree to which the KPI's value can be numerically specified.
+Relevant The degree to which the KPI enables performance improvement in the target operation.
+Predictive The degree to which the KPI is able to predict non-steady-state operations and is accompanied by
+a record of the past performance values for analysis and feedback control.
+Standardized
+The degree to which a standard for the KPI exists and that standard is correct, complete, and
+unambiguous; also, the more broad the scope of the standard, the better, for example, plant-wide is
+good, corporate-wide is better, and industry-wide is best.
+Verified
+The degree to which the KPI can be shown to be true and correct with respect to an accepted
+standard and has been correctly implemented
+Note: The verified criterion is zero if no standard exists, but this is an indication that a KPI used
+161
+Hester, Ezell, Collins, Horst, and Lawsure: A Method for Key Performance Indicator Assessment in Manufacturing Organizations
+IJOR Vol. 14, No. 4, 157−167 (2017)
+1813-713X Copyright © 2017 ORSTW
+without a standard can be a costly problem
+Accurate The degree to which the measured value of the KPI is close to the true value.
+Timely
+The degree to which the KPI is computed and accessible in real-time, where real-time depends on
+the operational context, and real-time means the updated KPI is accessible close enough in time to
+the occurrence of the event triggering a change in any metric affecting the KPI.
+Traceable The degree to which the steps to fix a problem are known, documented, and accessible, where the
+particular problem is indicated by values or temporal trends of the KPI.
+Independent The degree to which the KPI collection, transfer, computation, implementation, and reporting are
+performed independently from process stakeholders.
+Actionable The degree to which a team responsible for the KPI has the ability and authority to improve the
+actual value of the KPI within their own process.
+Buy-in The degree to which the team responsible for the target operation are willing to support the use of
+the KPI and perform the tasks necessary to achieve target values for the KPI.
+Understandable The degree to which the meaning of the KPI is comprehended by team members and
+management, particularly with respect to corporate goals.
+Documented
+The degree to which the documented instructions for implementation of a KPI are up-to-date,
+correct, and complete, including instructions on how to compute the KPI, what measurements are
+necessary for its computation, and what actions to take for different KPI values.
+Inexpensive The degree to which the cost of measuring, computing, and reporting the KPI is low.
+Step 6: Criteria Weighting Calculation
+Once all of the criteria have been ranked, it is advatangeous to translate these rankings into weights for use in further
+calculations. There are many mechanisms for generating weights, including equal weighting, rank order methods,
+Simple Multi-Attribute Ranking Technique (Edwards, 1971, 1977), and swing weighting (see, e.g., Clemen and Reilly,
+2001). The authors advocate the use of the rank sum method, as shown in Eq 2 below, for its simplicity.
+1
+1
+1
+i
+i K
+j j
+K r
+w
+K r =
++ - =
+å + -
+ (2)
+where ri is the rank of the i
+th criterion, K is the total number of criteria, and wi is the normalized ratio scale weight of
+the i
+th criteria. Results of Eq. 2 can be averaged across stakeholders to create a comprehensive evaluation of each
+criterion’s importance. A sample set of stakeholder group weights is shown in Figure 3 below.
+Figure 3: Sample Group Criteria Weights
+Step 7:Set value function for each criterion
+This task begins by fully documenting each measure. A common framework similar to Ezell (2007) should be used to
+develop value functions, as shown in Figure 4. It is necessary to account for whether the measure is natural or
+constructed scale and if the measure is direct or proxy.
+0.00
+0.02
+0.04
+0.06
+0.08
+0.10
+0.12
+0.14
+Weight
+Stakeholder Group Criteria Weight
+162
+Hester, Ezell, Collins, Horst, and Lawsure: A Method for Key Performance Indicator Assessment in Manufacturing Organizations
+IJOR Vol. 14, No. 4, 157−167 (2017)
+1813-713X Copyright © 2017 ORSTW
+Figure 4: Example Value Function
+Step 8: Assess each KPI score for each criterion
+A KPI score is a measure of the effectiveness of each candidate KPI for a given manufacturing process. Using the
+value functions generated in Step 7, each stakeholder independently generates their own rating of each KPI against
+each criterion. The selection of scores for each KPI with respect to each criterion can be a time consuming activity
+and may result in decision fatigue (Baumeister & Tierney, 2011). This adds further credence to the importance of
+properly selecting KPIs earlier in the process.
+Figure 5: KPI Criteria Characterization
+Step 9: Calculate KPI score
+Once all of the stakeholders have scored the KPI-criterion pairs individually, each KPI is assigned a score by each
+participant (this is done automatically via Excel based on already-collected information). This score is determined using
+Eq. 3:
+1
+1
+M
+j ijk j
+ik M
+j j
+w v
+v
+w
+=
+=
+= å
+å
+ (3)
+Index Name
+Score
+x
+index
+value
+v(x)
+Description 0 0
+Description 1 5
+Description 2 15
+Description 3 30
+Description 4 60
+Description 5 100
+KPI Definition
+0
+25
+50
+75
+100
+012345
+v(x)
+x
+0
+25
+50
+75
+100
+KPI 1 KPI 2 KPI 3 KPI 4 KPI 5
+Inexpensive
+Documented
+Understandable
+Buy‐in
+Actionable
+Independent
+Traceable
+Timely
+Accurate
+Verified
+Standardized
+163
+Hester, Ezell, Collins, Horst, and Lawsure: A Method for Key Performance Indicator Assessment in Manufacturing Organizations
+IJOR Vol. 14, No. 4, 157−167 (2017)
+1813-713X Copyright © 2017 ORSTW
+where M is the number of criteria, vik is the i
+th KPI score from the kth stakeholder. vijk is the i
+th KPI score, from the kth
+stakeholder, for the j
+th effectiveness criterion. The stakeholder average weight of the j
+th criterion is given by തݓതത
+ఫ.
+Completion of this step can be visually demonstrated using a stacked bar chart similar to that shown in Figure 5.
+Step 10: Identify KPI-criterion pair issues and Step 11: Discuss results; document ways to improve
+These steps call for a discussion between the stakeholder to determine whether any of the results shown in a graphic
+such as Figure 5 appears anomalous or problematic. For example, stakeholders, faced with Figure 5, maybe troubled
+by KPI 1’s poor performance relative to the others. At this point, we may wish to document that KPI 1’s performance
+is a concern, but more investigation is necessary. This is because the KPIs do not exist in a bubble. They operate in a
+set and they are tied to strategic objectives. In this manner, they require further investigation, pursued in Phase 2 of
+the KAM. While more advanced methods exist (Collins, Hester, Ezell, and Horst, 2016), a general heuristic that the
+authors suggest employing as a starting point is to suggest improvement where the greatest deviation exists between a
+KPI-criterion pair and its ideal (i.e., there is the most room for improvement).
+4. CASE STUDY
+In early 2015, the authors conducted a workshop with a leading chemical manufacturing company to assess a
+environment, health and safety process they employed as well as to test out the KAM. This case study provides
+highlights of this engagement. The scope of the initial engagement covered the tasks outlined in Phase 1 of the KAM.
+Step 1: Identify target manufacturing process
+The company was interested in assessing an internal process they had focused on environmental, safety, and health.
+The process was identified as business-critical for the organization.
+Step 2: Identify stakeholders
+The manufacturing company identified five stakeholders to participate from varied levels of the organization’s
+hierarchy. These included the site manager, EH&S superintendent, a process engineer, engineering manager, and the
+production manager.
+Step 3: Discuss KPIs used in TMP and Step 4: Decide on KPIs for TMP
+The organization pre-selected 12 KPIs for assessment based on the current execution of the process in question and
+current KPI tracking. After discussion, the stakeholders retained these 12 KPIs.
+Step 5: Rank criteria for KPI assessment
+Each of the five stakeholders individually assessed the relative importance of the criteria.
+Step 6: Criteria Weighting Calculation
+Eq. 2 was used to convert the raw rankings of the five individuals into a comprehensive weight for each of the criteria.
+These weights are shown in Table 2 in descending order of weight.
+Table 2: Criteria Weights
+ Criterion Weight Criterion Weight
+Understandable 13.73% Standardized 6.86%
+Quantifiable 12.75% Documented 5.88%
+Actionable 11.76% Predictive 4.90%
+Relevant 8.82% Traceable 3.92%
+Accurate 8.82% Verified 2.94%
+Timely 8.82% Independent 1.96%
+Buy-in 7.84% Inexpensive 0.98%
+164
+Hester, Ezell, Collins, Horst, and Lawsure: A Method for Key Performance Indicator Assessment in Manufacturing Organizations
+IJOR Vol. 14, No. 4, 157−167 (2017)
+1813-713X Copyright © 2017 ORSTW
+Step 7: Set value function for each criterion
+In this particular case, the stakeholders generated one value function and decided to use it for all criteria. This value
+function is shown in Figure 7.
+Criterion: Quantifiable x v(x)
+ Level 0 Completely Disagree 0 0 Mostly Disagree 1 10 Slightly Disagree 2 40 Undecided 3 50 Slightly Agree 4 60
+Mostly Agree 5 90 Level 7 Completely Agree 6 100 Statement: The KPI's value can be numerically specified.
+Figure 7: Standard Criterion Value Function
+Step 8: Assess each KPI score for each criterion
+Each stakeholder used the value function shown in Figure 7 to assess each KPI’s relative success in addressing each of
+the criteria. This required 14 criteria * 12 KPIs = 168 ratings for each stakeholder.
+Step 9: Calculate KPI score
+
+Using Eq. 3, KPI scores were calculated. Table 3 shows these scores, averaged across the stakeholders. The bottom
+row represents the cumulative total for each KPI.
+Table 3: KPI Criteria Scores
+ Criterion/KPI #1 #2 #3 #4 #5 #6 #7 #8 #9 #10 #11 #12 IDEAL
+Quantifiable 12.7 11.7 9.8 10.4 10.0 10.6 9.8 8.5 9.8 8.1 6.4 1.7 12.7
+Predictive 1.6 2.3 2.3 2.4 2.2 2.1 2.0 2.2 3.3 3.3 2.2 1.9 4.9
+Relevant 7.4 7.4 5.4 6.0 6.5 6.6 6.9 6.8 6.0 5.6 6.3 3.2 8.8
+Standardized 5.8 5.6 4.6 3.8 2.7 1.5 3.4 3.9 3.5 4.2 3.1 1.5 6.9
+Verified 2.5 2.4 2.4 1.8 1.3 1.7 1.5 1.3 1.5 1.6 1.2 0.6 2.9
+Accurate 7.4 6.8 7.1 6.8 5.7 4.9 4.0 4.7 4.7 4.4 5.4 0.7 8.8
+Timely 7.2 7.2 5.7 5.0 5.4 6.2 5.6 4.9 5.3 5.4 5.3 1.9 8.8
+Traceable 3.3 3.2 2.4 2.4 2.4 2.6 2.5 1.8 1.8 2.2 2.3 0.2 3.9
+Independent 1.1 1.1 0.8 1.0 0.8 1.0 1.0 0.9 0.9 0.9 1.2 0.9 2.0
+Buy-in 5.9 5.9 5.8 5.2 5.6 4.3 4.3 4.1 3.5 4.8 3.8 1.4 7.8
+Actionable 8.6 8.4 7.8 8.2 8.0 8.0 7.8 7.8 8.4 6.7 6.7 2.7 11.8
+Inexpensive 0.5 0.5 0.6 0.6 0.5 0.5 0.5 0.6 0.3 0.5 0.5 0.5 1.0
+Documented 4.8 4.8 4.9 3.7 4.4 3.7 4.4 4.7 2.3 3.5 3.8 1.2 5.9
+Understandable 11.4 11.4 11.4 11.2 10.1 10.8 10.8 11.0 10.3 10.1 7.3 4.6 13.7
+Total 80.2 78.7 70.9 68.6 65.7 64.5 64.5 63.1 61.7 61.2 55.5 23.1 100.0
+Step 10: Identify KPI-criterion pair issues and Step 11: Discuss results; document ways to improve
+A number of KPI-criterion pairs were determined to be insufficient at this stage, based on their deviation from
+the potential ideal score they could achieve. The top 20 potential KPI Improvement scores for the KPI-criterion pairs
+as ranked by greatest difference between the scored value and the ideal value, in the context of the target manufacturing
+process, are shown in Table 4. This list serves as an initial starting point for further investigation and for targeting of
+resources in improving KPI and overall organizational performance.
+0
+50
+100
+0123456
+v(x)
+x
+165
+Hester, Ezell, Collins, Horst, and Lawsure: A Method for Key Performance Indicator Assessment in Manufacturing Organizations
+IJOR Vol. 14, No. 4, 157−167 (2017)
+1813-713X Copyright © 2017 ORSTW
+Table 4: Suggested Improvements
+KPI Criterion Improvement Score KPI Criterion Improvement Score
+11 Understandable 6.4 5 Standardized 4.2
+11 Quantifiable 6.3 8 Accurate 4.1
+6 Standardized 5.4 9 Accurate 4.1
+10 Actionable 5.1 11 Buy-in 4.0
+11 Actionable 5.1 8 Actionable 4.0
+7 Accurate 4.8 7 Actionable 4.0
+10 Quantifiable 4.6 6 Accurate 3.9
+10 Accurate 4.4 8 Timely 3.9
+9 Buy-in 4.3 3 Actionable 3.9
+8 Quantifiable 4.2 4 Timely 3.8
+5. CASE STUDY FINDINGS
+In addition to the numeric results of the case study, several qualitative findings were also generated during deployment
+of the KAM. They are summarized in the following four recommendations made by the authors to the client:
+1. Starting with the highest scoring KPI-criterion pair in Table 4, improve the performance of the KPI in terms
+of the criterion in the context of the examined TMP. Once it is improved as much as possible, move on to
+the next KPI-criterion pair in Table 4. Continue until all KPI-criterion pairs have been addressed or all
+organizational resources (i.e., personnel or available funds) are exhausted.
+2. Once the organization has made the suggested improvements, conduct a follow-up workshop to examine
+the effect of improvements. Rescore criterion weights and KPI criterion scores, compute KPI scores and
+KPI improvement scores, and measure the improvement from KPI scores from the first workshop.
+3. If the resultant improvement is determined at the second workshop to be insufficient, determine a new set
+of KPI-criterion pairs for improvement and repeat Steps 1-3.
+4. Additionally, conduct a follow-up workshop to address Phase 2 of the KAM; that is, to explore KPI
+Alignment and Balance. This workshop will include assessment of current KPI relevance and existence of
+a balanced set of KPIs, KPI alignment to strategic objectives, and possibilities for reduction or (if necessary)
+introduction of KPIs.
+Each of these findings is generalizable and is applicable to any usage of the proposed methodology by any
+stakeholder as a path forward once an initial workshop has been conducted. The generalizability is based on the
+mathematical foundation of value focused thinking on which the approach is founded. Thus, while an organization’s
+individual results may be different, the findings presented in this section can be applied to any set of results generated
+using the proposed methodology. In general, understanding what KPI-criterion pairs should be improved and where
+resources should be focused assists organizations in achieving their strategic goals, the achievement of which is being
+monitored by the very same KPIs.
+6. CONCLUSIONS
+This paper presented a straightforward method for assessing KPI performance for a manufacturing organization. This
+method attempted to balance practitioner concerns (i.e., ease of use) with a proper mathematical grounding for validity.
+The proposed method has two phases: 1) KPI Characterization and 2) KPI Alignment and Balance, with this paper
+focused on the development of Phase 1. A leading manufacturing organization partook in an exercise to demonstrate
+the Phase 1 method and this paper reports the results of that investigation. The authors have begun developing
+methods in support of Phase 2, i.e., Collins, Hester, Ezell, and Horst (2016), and it is the intent of the authors to
+explore further case studies to give additional validity to the proposed method. Future enhancements should include
+additional software support and advanced analytics for improvement recommendations.
+ACKNOWLEDGEMENTS
+The authors wish to thank the National Institute of Standards and Technology (NIST) for funding the project, Applied
+Research using Multi-attribute Value Theory in the Design of Key Performance Indicator Effectiveness for Sensing
+and Control Smart Manufacturing (2014-NIST-MSE-01), which the work presented in this paper is part of.
+166
+Hester, Ezell, Collins, Horst, and Lawsure: A Method for Key Performance Indicator Assessment in Manufacturing Organizations
+IJOR Vol. 14, No. 4, 157−167 (2017)
+1813-713X Copyright © 2017 ORSTW
+REFERENCES
+1. American National Standards Institute (ANSI) (2014). ANSI Essential Requirements: Due Process Requirements
+for American National Standards (January 2014 ed.). ANSI, New York, NY.
+2. Baggett, K.S., and Hester, P.T. (2013). Built To Fail? A Literature Review of R&D Organization Performance
+Measurement System Assessment. Technology Interface International Journal, 14(1): 89-98.
+3. Baroudi, R. (2010). KPI Mega Library: 17,000 Key Performance Indicators. Scotts Valley, CA: CreateSpace
+Independent Publishing Platform.
+4. Baumeister, R.F., and Tierney, J. (2011). Willpower: Rediscovering the Greatest Human Strength. Penguin.
+5. Behn, R.D. (1995). The Big Questions of Public Management. Public Administration Review, 55: 313-324.
+6. Behn, R.D. (2003). Why Measure Performance?: Different Purposes Require Different Measures. Public
+Administration Review, 63: 586-606.
+7. Bourne, M., Mills, J., Wilcox, M., Neely, A., and Platts, K. (2000). Designing, Implementing, and Updating
+Performance Measurement Systems. International Journal of Operations and Production Management, 20: 754-771.
+8. Bourne, M., Neely, A., Platts, K., and Mills, J. (2002). The Success and Failure of Performance Measurement
+Initiatives: Perceptions of Participating Managers. International Journal of Operations and Production Management, 22:
+1288-1310.
+9. Carlucci, D. (2010). Evaluating and Selecting Key Performance Indicators: an ANP-based Model. Measuring Business
+Excellence, 14(2): 66-76.
+10. Clemen, R., and Reilly, T. (2001). Making Hard Decisions with Decision Tools. Duxbury, Pacific Grove, California.
+11. Collins, A., Hester, P.T., Ezell, B., and Horst, J. (2016). An improvement selection methodology for Key
+Performance Indicators. Environment, Systems and Decisions, 36(2), 196-208.
+12. Edwards, W. (1971). Social Utilities. The Engineering Economist, Summer Symposium Series(6), 119–129.
+13. Edwards, W. (1977). How to Use Multiattribute Utility Measurement for Social Decision-making. IEEE
+Transactions on Systems, Man, and Cybernetics, 7(5): 326-340.
+14. Ezell, B. (2007). Critical Infrastructure Vulnerability Assessment Model (I-VAM), Risk Analysis, 27(3): 571-583.
+15. Fraser, J. (2006). Metrics that Matter: Uncovering KPIs that Justify Operational Improvements. MESA
+International, Chandler, AZ.
+16. Gimbert, X., Bisbe, J., and Mendoza, X. (2010). The Role of Performance Measurement Systems in Strategy
+Formulation Processes. Long Range Planning, 43: 477-497.
+17. Griffin, A., and Page, A.L. (1996). PDMA Success Measurement Project: Recommended Measures for Product
+Development Success and Failure. Journal of Product Innovation Management, 13: 478-496.
+18. Hammond, J.S., Keeney, R.L., and Raiffa, H. (2002). Smart Choices: A Practical Guide to Making Better Life Decisions.
+Broadway Books, New York.
+19. Hester, P.T., and Adams, K.M. (2013). Determining Stakeholder Influence Using Input-Output Modeling. Procedia
+Computer Science, 20: 337-341.
+20. Hester, P.T., and Adams, K.M. (2014). Systemic Thinking: Fundamentals for Understanding Problems and Messes. SpringerVerlag, Cham, Switzerland.
+21. Horst, J., and Weiss, B. (2015). A Method for Effective and Efficient Selection of Balanced Key Performance
+Indicators. National Institute of Standards and Technology, Washington, DC.
+22. Keeney, R.L. (1992). Value-Focused Thinking: A Path to Create Decision Making. Princeton University Press, Princeton,
+NJ.
+23. The KPI Institute. (2013). The KPI Compendium: 20,000 Key Performance Indicators used in practice.
+Melbourne, AU: The KPI Compendium.
+24. Lawsure, K., Ezell, B., Horst, J., Collins, A., and Hester, P. (2015). Web-Enabled Selection Method for Key
+Performance Indicators for Manufacturing. MODSIM World Conference & Expo 2015, Virginia Beach Convention
+Center, Virginia Beach, VA, 31 March – 2 April, 2015.
+25. Marr, B. (2012). Key Performance Indicators (KPI): The 75 measures every manager needs to know. Pearson
+Education: Harlow, UK.
+26. Meyers, T.J., and Hester, P. (2011). Toward the What and How of Measuring R&D System Effectiveness. Paper Presented
+at the Proceedings of the 7th European Conference on Management, Leadership and Governance: SKEMA
+Business School, Sophia-Antipolis, France, 6-7 October 2011.
+27. National Performance Review. (1997). Serving the American Public: Best Practices in Performance Measurement
+(Benchmarking Study Report of June 1997). Washington, D.C.
+28. Neely, A. (1999). The Performance Measurement Revolution: Why Now and Where Next? International Journal of
+Operations and Production Management, 19: 205-228.
+29. Neely, A.D., and Bourne, M. (2000). Why Measurement Initiatives Fail. Measuring Business Excellence, 4(4): 3-7.
+30. Wilcox, M., and Bourne, M. (2003). Predicting Performance. Management Decision, 41: 806-816.
+167
+Hester, Ezell, Collins, Horst, and Lawsure: A Method for Key Performance Indicator Assessment in Manufacturing Organizations
+IJOR Vol. 14, No. 4, 157−167 (2017)
+1813-713X Copyright © 2017 ORSTW
+31. Neely, A., Mills, J., Platts, K., Gregory, M., and Richards, H. (1996). Performance Measurement System Design:
+Should Process Based Approaches Be Adopted? International Journal of Production Economics, 46-47: 423-431.
+32. Parmenter, D. (2010). Key performance indicators: Developing, implementing, and using winning KPIs. Hoboken, NJ: Wiley
+& Sons.
+33. Rouse, P., and Puterill, M. (2003). An Integral Framework for Performance Measurement. Management Decision, 41:
+791-805.
+34. Saaty, T.L. (1980). The Analytic Hierarchy Process. Mcgraw Hill, New York.
+35. Vennix, J. (1996). Group Model Building: Facilitating Team Learning Using System Dynamics. John Wiley & Sons,
+Chicester, UK. 
