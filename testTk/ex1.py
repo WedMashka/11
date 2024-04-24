@@ -52,6 +52,8 @@ btn1.pack() # разместили кнопку в окне
 
 
 lable1.pack() # расположили виджет в окне
-
+print(1)
+print(window.state())
 window.mainloop() # запускает окно
+print(2)
 
