@@ -22,21 +22,41 @@ def send_msg():
     msg = MIMEMultipart()  # Создаем сообщение
     msg['From'] = addr_from  # Адресат
     msg['To'] = addr_to  # Получатель
-    msg['Subject'] = 'Тема сообщения78' # Тема сообщения
+    msg['Subject'] = 'Тема сообщения987' # Тема сообщения
     body = "Текст сообщения2"
     msg.attach(MIMEText(body, 'plain'))  # Добавляем в сообщение текст
-    print(2)
-            # server = smtplib.SMTP('smtp.yandex.ru', 465)  # Создаем объект SMTP
-    server = smtplib.SMTP_SSL('smtp.yandex.ru', 465)  # Создаем объект SMTP
-            #server.set_debuglevel(True)  # Включаем режим отладки - если отчет не нужен, строку можно закомментировать
-            #server.starttls()  # Начинаем шифрованный обмен по TLS
-    print(3)
 
-    server.login(addr_from, password)  # Получаем доступ
-    print(4)
-    server.sendmail(addr_from, addr_to, msg.as_string())  # Отправляем сообщение
-    print(5)
-    server.quit()  # Выходим
+    dirPath = 'C:\\Users\\regul\\PycharmProjects\\pythonProject\\testSendEmail\\attachmets'
+
+    for fileInDir in os.listdir(dirPath):  # извелекаем все имена файлов из директории
+        # print(fileInDir)
+        filename = os.path.basename(fileInDir)  # получаем имя файла с расширением
+        print(filename)
+        ftype0, encoders1 = mimetypes.guess_type(
+            fileInDir)  # получаем тип файла, и саб тип через слешь и получаем кодировку
+        print(ftype0)
+        ftype, fsubtype = ftype0.split('/')  # разделяем тип и сабтип по переменным
+        with open(f'{dirPath}/{filename}', 'rb') as ff:
+            ffile = MIMEBase(ftype, fsubtype)
+            ffile.set_payload(ff.read().strip())
+            encoders.encode_base64(ffile)
+
+    # with open('/testSendEmail/attachmets/вложение1ю.txt', 'r', encoding='utf-8') as fileObj:
+    #     file = MIMEText(fileObj.read().strip())
+            ffile.add_header('content-disposition', 'attachment', filename=('utf-8', '', filename))
+            msg.attach(ffile)
+
+    print(2)
+    server = smtplib.SMTP_SSL('smtp.yandex.ru', 465)  # Создаем объект SMTP
+    print(3)
+    try:
+        server.login(addr_from, password)  # Получаем доступ
+        print(4)
+        server.sendmail(addr_from, addr_to, msg.as_string())  # Отправляем сообщение
+        print(5)
+        server.quit()  # Выходим
+    except Exception as _ex:
+        print(f'{_ex} \n Check your  login or password')
     print(6)
     print('Done')
 
